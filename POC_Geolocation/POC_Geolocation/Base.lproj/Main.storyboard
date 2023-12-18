@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DcQ-W1-YKO">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="G0q-UD-rpQ">
+            <objects>
+                <navigationController id="DcQ-W1-YKO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Nm-CJ-ljJ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oS9-GJ-4W0" kind="relationship" relationship="rootViewController" id="BMu-0Q-Wp2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4D-TT-Kld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-657" y="-90"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qdu-s3-gfM">
+            <objects>
+                <viewController id="oS9-GJ-4W0" customClass="ViewController" customModule="POC_Geolocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m46-bV-QD8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your route" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9w-GY-Zce">
+                                <rect key="frame" x="116.00000000000001" y="203" width="161.33333333333337" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-UA-2XH">
+                                <rect key="frame" x="121.32452972626629" y="409.7388562444296" width="149.99999999999994" height="35.000000000000085"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Check">
+                                    <backgroundConfiguration key="background"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="bf9-ka-v6S" kind="show" id="BdF-7u-UxF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RHa-8t-igk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K9w-GY-Zce" firstAttribute="centerX" secondItem="m46-bV-QD8" secondAttribute="centerX" id="3yF-1J-QDy"/>
+                            <constraint firstItem="OZg-UA-2XH" firstAttribute="centerX" secondItem="m46-bV-QD8" secondAttribute="centerX" id="Iio-s1-wO0"/>
+                            <constraint firstItem="OZg-UA-2XH" firstAttribute="centerY" secondItem="m46-bV-QD8" secondAttribute="centerY" id="OfU-aJ-jrO"/>
+                            <constraint firstItem="K9w-GY-Zce" firstAttribute="top" secondItem="RHa-8t-igk" secondAttribute="top" constant="100" id="WEa-DI-fcb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fzM-lK-2uI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJV-aw-nek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.64122137404578" y="-90.140845070422543"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Sa3-hW-42m">
+            <objects>
+                <viewController id="bf9-ka-v6S" customClass="MapViewController" customModule="POC_Geolocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZTA-L3-A5A">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpz-na-Sxy">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vbu-N9-PTu">
+                                <rect key="frame" x="16" y="119" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="408-n5-YQN">
+                                <rect key="frame" x="305" y="114" width="72" height="45"/>
+                                <color key="backgroundColor" red="0.62958076918094386" green="0.617727858845738" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="L3z-N6-w3C"/>
+                                    <constraint firstAttribute="height" constant="45" id="ZoZ-Rb-W6i"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedShowAddress:" destination="bf9-ka-v6S" eventType="touchUpInside" id="5zq-N9-ggA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XxH-2y-Emg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qpz-na-Sxy" firstAttribute="top" secondItem="XxH-2y-Emg" secondAttribute="top" id="8El-AC-J3a"/>
+                            <constraint firstItem="Vbu-N9-PTu" firstAttribute="top" secondItem="XxH-2y-Emg" secondAttribute="top" constant="16" id="A19-91-KcI"/>
+                            <constraint firstItem="Qpz-na-Sxy" firstAttribute="leading" secondItem="XxH-2y-Emg" secondAttribute="leading" id="DW5-Ia-jWu"/>
+                            <constraint firstItem="XxH-2y-Emg" firstAttribute="bottom" secondItem="Qpz-na-Sxy" secondAttribute="bottom" id="F6O-9D-R83"/>
+                            <constraint firstItem="XxH-2y-Emg" firstAttribute="trailing" secondItem="408-n5-YQN" secondAttribute="trailing" constant="16" id="JGy-dn-q2i"/>
+                            <constraint firstItem="408-n5-YQN" firstAttribute="leading" secondItem="Vbu-N9-PTu" secondAttribute="trailing" constant="16" id="URJ-rI-BG3"/>
+                            <constraint firstItem="Vbu-N9-PTu" firstAttribute="centerY" secondItem="408-n5-YQN" secondAttribute="centerY" id="VKF-hS-dyC"/>
+                            <constraint firstItem="Vbu-N9-PTu" firstAttribute="leading" secondItem="XxH-2y-Emg" secondAttribute="leading" constant="16" id="a40-R6-yaa"/>
+                            <constraint firstItem="XxH-2y-Emg" firstAttribute="trailing" secondItem="Qpz-na-Sxy" secondAttribute="trailing" id="wdk-pi-awc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qTu-uI-Etf"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="Vbu-N9-PTu" id="Uis-Ld-PbW"/>
+                        <outlet property="mapView" destination="Qpz-na-Sxy" id="vfP-xs-Ls8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bI2-i8-UjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.58015267175574" y="-90.140845070422543"/>
+        </scene>
+        <!--Addresses Table View Controller-->
+        <scene sceneID="KmV-Za-rTK">
+            <objects>
+                <tableViewController storyboardIdentifier="AddressesTableViewController" id="dAd-7S-KZ7" customClass="AddressesTableViewController" customModule="POC_Geolocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="iLn-sA-6EC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressCell" id="ExH-Q7-hBz">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ExH-Q7-hBz" id="3e2-Su-hLT">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dAd-7S-KZ7" id="07l-gf-BGu"/>
+                            <outlet property="delegate" destination="dAd-7S-KZ7" id="mke-NU-f8l"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDk-Hd-AWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666" y="-90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
